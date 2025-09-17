@@ -1,24 +1,26 @@
 import React from 'react';
 import { Box, Typography, Container, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-// Sample project data
-const myProjects = [
+
+export const myProjects = [
   {
-    id: 1,
+    id: 'lightsync',
     title: 'LightSync',
-    description: 'description',
-    link: 'lightsync.com',
+    description: 'A web-based lighting control system for smart homes.',
+    link: 'https://www.instagram.com',
   },
   {
-    id: 2,
-    title: 'Coin Classification using neural netweok',
-    description: 'details',
-    link: 'https://github.com/my-username/project-beta',
+    id: 'coin-classification',
+    title: 'Coin Classification using neural network',
+    description: 'An AI model to classify various types of coins from images.',
+    link: 'https://www.instagram.com',
   },
- 
 ];
 
 function Projects() {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Box
@@ -37,10 +39,9 @@ function Projects() {
         </Typography>
 
         <Typography variant="body1" sx={{ marginBottom: 4 }}>
-          Here’s a list of projects I’ve worked on!
+          Here is a list of projects I have worked on!
         </Typography>
 
-        {/* Map over the projects array to display each project */}
         {myProjects.map((project) => (
           <Box
             key={project.id}
@@ -59,7 +60,10 @@ function Projects() {
             <Typography variant="body2" color="text.secondary" sx={{ marginTop: 1, marginBottom: 2 }}>
               {project.description}
             </Typography>
-            <Button variant="outlined" href={project.link} target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outlined"
+              onClick={() => navigate(`/projects/${project.id}`)} // Use navigate for internal links
+            >
               View Details
             </Button>
           </Box>

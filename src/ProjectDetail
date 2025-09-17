@@ -1,0 +1,77 @@
+import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Box, Typography, Container, Button } from '@mui/material';
+import { myProjects } from './Projects';
+
+
+
+
+function ProjectDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  
+  const project = myProjects.find(p => p.id === id);
+
+  
+  if (!project) {
+    return (
+      <Container>
+        <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+          <Typography variant="h5" color="error">
+            Project not found!
+          </Typography>
+          <Button onClick={() => navigate('/projects')} sx={{ marginTop: 2 }}>
+            Back to Projects
+          </Button>
+        </Box>
+      </Container>
+    );
+  }
+
+  return (
+    <Container>
+      <Box
+        sx={{
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          paddingTop: 8,
+          paddingBottom: 8,
+        }}
+      >
+        <Typography variant="h4" gutterBottom>
+          {project.title}
+        </Typography>
+
+        <Box
+          sx={{
+            border: '1px solid #e0e0e0',
+            borderRadius: 2,
+            padding: 4,
+            width: '100%',
+            maxWidth: 800,
+            textAlign: 'left',
+            boxShadow: 1,
+          }}
+        >
+          <Typography variant="body1" sx={{ marginBottom: 3 }}>
+            {project.description}
+          </Typography>
+
+          <Button variant="contained" href={project.link} target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </Button>
+
+          <Button onClick={() => navigate('/projects')} sx={{ marginLeft: 2 }}>
+            Back to All Projects
+          </Button>
+        </Box>
+      </Box>
+    </Container>
+  );
+}
+
+export default ProjectDetail;

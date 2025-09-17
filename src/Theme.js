@@ -16,7 +16,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'Poppins, sans-serif',
-    fontWeightBold: 700, // ✅ THIS IS IMPORTANT
+    fontWeightBold: 700, 
     button: {
       fontWeight: 600,
       textTransform: 'none',
