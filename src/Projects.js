@@ -8,13 +8,13 @@ export const myProjects = [
     id: 'lightsync',
     title: 'LightSync',
     description: 'A web-based lighting control system for smart homes.',
-    link: 'https://www.instagram.com',
+    link: 'https://github.com/mohishamongia/LightSync',
   },
   {
     id: 'coin-classification',
     title: 'Coin Classification using neural network',
     description: 'An AI model to classify various types of coins from images.',
-    link: 'https://www.instagram.com',
+    link: 'https://github.com/mohishamongia/Coin-Classification',
   },
 ];
 

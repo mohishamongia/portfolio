@@ -51,7 +51,7 @@ function About() {
               variant="contained"
               color="primary"
               size="large"
-              href="/MongiaMohisha_Resume_final.pdf"
+              href="/mongiamohisha_resume_2025-2.pdf"
               target="_blank"
               sx={{ paddingX: 4, paddingY: 1.5, fontSize: '1rem', boxShadow: 3,
                 '&:hover': {
@@ -128,18 +128,24 @@ function About() {
           Connect With Me
         </Typography>
         <Box sx={{ display: 'flex', gap: 2 }}>
-          {/* This should be a normal 'mailto' link */}
-          <Link href="mohishamongia20@gmail.com" color="inherit" underline="hover">
-            Email
-          </Link>
-          <Link href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" color="inherit" underline="hover">
-            LinkedIn
-          </Link>
-          <Link href="github.com" target="_blank" rel="noopener" color="inherit" underline="hover">
-          GitHub
-          </Link>
+  {/* This is the correct way to do a 'mailto' link */}
+  <Link href="mailto:mohishamongia20@gmail.com" color="inherit" underline="hover">
+    Email
+  </Link>
+
+  {/* ▼▼▼ REPLACE THIS href WITH YOUR ACTUAL LINKEDIN URL ▼▼▼ */}
+  <Link href="https://www.linkedin.com/in/mohisha-mongia/" target="_blank" rel="noopener" color="inherit" underline="hover">
+    LinkedIn
+  </Link>
+
+  {/* ▼▼▼ REPLACE THIS href WITH YOUR ACTUAL GITHUB URL ▼▼▼ */}
+  <Link href="https://github.com/mohishamongia" target="_blank" rel="noopener" color="inherit" underline="hover">
+    GitHub
+  </Link>
+</Box>
+      
         </Box>
-      </Box>
+     
     </Container>
   );
 }
