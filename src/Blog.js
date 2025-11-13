@@ -1,9 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Box, Typography, Container, Button } from '@mui/material';
+// import { useNavigate } from 'react-router-dom'; // <-- REMOVED
+import { Box, Typography, Container } from '@mui/material'; // <-- REMOVED Button
 
 function Blog() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate(); // <-- REMOVED
 
   return (
     <Container>
